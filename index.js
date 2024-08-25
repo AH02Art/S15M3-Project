@@ -69,6 +69,7 @@ class Counter {
    * counter.countDown() // returns 0
    */
   countDown() {
+    // inside the tests folder this.number = 3
     if (this.number > 0) {
       return this.number--;
     }
@@ -81,7 +82,8 @@ class Seasons {
    * [Exercise 5A] Seasons creates a seasons object
    */
   constructor() {
-    // ✨ initialize whatever properties are needed
+    this.seasons = [ "summer", "fall", "winter", "spring" ]
+    this.seasonIndex = 0
   }
 
   /**
@@ -97,7 +99,13 @@ class Seasons {
    * seasons.next() // returns "summer"
    */
   next() {
-    // ✨ implement
+    let result = this.seasons[this.seasonIndex];
+    if (this.seasonIndex === 3) {
+      this.seasonIndex = 0;
+    } else {
+      this.seasonIndex++;
+    }
+    return result;
   }
 }
 
